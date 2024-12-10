@@ -200,16 +200,14 @@ public class MatcherFilter implements Filter {
 
     private String getHttpMethodFrom(HttpServletRequest httpRequest) {
         String method = httpRequest.getHeader(HTTP_METHOD_OVERRIDE_HEADER);
-
-        if (method == null) {
-            method = httpRequest.getMethod();
+        //if (method == null) {
+        //    method = httpRequest.getMethod();
+        //}
         }
-        return method;
     }
 
     @Override
     public void destroy() {
     }
-
 
 }

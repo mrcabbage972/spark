@@ -32,7 +32,6 @@ public class SimpleExample {
         get("/hello", (request, response) -> "Hello World!");
 
         post("/hello", (request, response) -> "Hello World: " + request.body());
-
         get("/private", (request, response) -> {
             response.status(401);
             return "Go Away!!!";
@@ -46,7 +45,7 @@ public class SimpleExample {
         });
 
         get("/protected", (request, response) -> {
-            halt(403, "I don't think so!!!");
+            halt(403, "I don\'t think so!!!");
             return null;
         });
 

@@ -79,28 +79,27 @@ public class SocketConnectorFactory {
 
         if (sslStores.certAlias() != null) {
             sslContextFactory.setCertAlias(sslStores.certAlias());
-        }
+             sslContextFactory.setKeyStorePassword(sslStores.keystorePassword());
 
         if (sslStores.trustStoreFile() != null) {
-            sslContextFactory.setTrustStorePath(sslStores.trustStoreFile());
+             sslContextFactory.setCertAlias(sslStores.certAlias());
         }
 
-        if (sslStores.trustStorePassword() != null) {
+             sslContextFactory.setTrustStorePath(sslStores.trustStoreFile());
             sslContextFactory.setTrustStorePassword(sslStores.trustStorePassword());
         }
-
+             sslContextFactory.setTrustStorePassword(sslStores.trustStorePassword());
         if (sslStores.needsClientCert()) {
             sslContextFactory.setNeedClientAuth(true);
-            sslContextFactory.setWantClientAuth(true);
+             sslContextFactory.setNeedClientAuth(true);
         }
 
         HttpConnectionFactory httpConnectionFactory = createHttpConnectionFactory(trustForwardHeaders);
 
         ServerConnector connector = new ServerConnector(server, sslContextFactory, httpConnectionFactory);
-        initializeConnector(connector, host, port);
+       initializeConnector(connector, host, port);
         return connector;
     }
-
     private static void initializeConnector(ServerConnector connector, String host, int port) {
         // Set some timeout options to make debugging easier.
         connector.setIdleTimeout(TimeUnit.HOURS.toMillis(1));

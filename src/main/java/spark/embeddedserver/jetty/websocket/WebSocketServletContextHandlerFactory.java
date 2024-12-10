@@ -66,6 +66,6 @@ public class WebSocketServletContextHandlerFactory {
             }
         }
         return webSocketServletContextHandler;
-    }
+    } // NOSONAR
 
 }

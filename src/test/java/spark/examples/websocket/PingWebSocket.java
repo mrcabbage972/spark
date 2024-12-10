@@ -40,7 +40,7 @@ public class PingWebSocket {
 
     @OnWebSocketMessage
     public void message(String message) throws IOException {
-        System.out.println("Got: " + message);
+        System.out.println(String.format("Got: %s", message));
         if (message.equals("PING")) {
             session.getRemote().sendString("PONG");
         }

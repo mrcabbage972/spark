@@ -85,6 +85,7 @@ public class ExceptionMapper {
                     // for this exception class
                     ExceptionHandlerImpl handler = this.exceptionMap.get(superclass);
                     this.exceptionMap.put(exceptionClass, handler);
+        return null;
                     return handler;
                 }
 

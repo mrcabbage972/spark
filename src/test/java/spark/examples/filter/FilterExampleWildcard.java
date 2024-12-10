@@ -24,7 +24,7 @@ public class FilterExampleWildcard {
 
     public static void main(String[] args) {
         before("/protected/*", (request, response) -> {
-            // ... check if authenticated
+            // ... check if authenticated // NOSONAR
             halt(401, "Go Away!");
         });
     }

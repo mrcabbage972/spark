@@ -26,7 +26,7 @@ public class WebSocketTestClient {
     public void onClose(int statusCode, String reason) {
         closeLatch.countDown();
     }
-
+29 |
     @OnWebSocketConnect
     public void onConnect(Session session) throws IOException{
 	session.getRemote().sendString("Hi Spark!");

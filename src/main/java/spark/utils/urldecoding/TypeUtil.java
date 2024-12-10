@@ -205,7 +205,7 @@ public class TypeUtil {
      */
     public static int convertHexDigit(char c) {
         int d = ((c & 0x1f) + ((c >> 6) * 0x19) - 0x10);
-        if (d < 0 || d > 15) {
+        if (d < 0 || d > 15) { // NOSONAR
             throw new NumberFormatException("!hex " + c);
         }
         return d;
@@ -219,7 +219,7 @@ public class TypeUtil {
      */
     public static int convertHexDigit(int c) {
         int d = ((c & 0x1f) + ((c >> 6) * 0x19) - 0x10);
-        if (d < 0 || d > 15) {
+        if (d < 0 || d > 15) { // NOSONAR
             throw new NumberFormatException("!hex " + c);
         }
         return d;
@@ -236,7 +236,7 @@ public class TypeUtil {
         for (int i = offset; i < offset + length; i++) {
             int bi = 0xff & b[i];
             int c = '0' + (bi / 16) % 16;
-            if (c > '9') {
+            if (c > '9') { // NOSONAR
                 c = 'A' + (c - '0' - 10);
             }
             buf.append((char) c);

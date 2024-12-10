@@ -12,11 +12,8 @@ public class DefaultTransformerExample {
         defaultResponseTransformer(json);
 
         get("/hello", "application/json", (request, response) -> {
-            return new MyMessage("Hello World");
         });
 
-        get("/hello2", "application/json", (request, response) -> {
-            return new MyMessage("Hello World");
         }, model -> "custom transformer");
     }
 

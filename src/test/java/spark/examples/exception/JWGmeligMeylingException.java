@@ -1,5 +1,4 @@
 package spark.examples.exception;
-
 public class JWGmeligMeylingException extends RuntimeException {
     private static final long serialVersionUID = 1L;
     public String trustButVerify() {

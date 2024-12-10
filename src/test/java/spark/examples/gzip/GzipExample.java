@@ -18,7 +18,6 @@ package spark.examples.gzip;
 
 import static spark.Spark.awaitInitialization;
 import static spark.Spark.get;
-import static spark.Spark.staticFileLocation;
 
 /**
  * Example showing off the different GZIP features in Spark.

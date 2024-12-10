@@ -38,17 +38,15 @@ public abstract class ResponseTransformerRouteImpl extends RouteImpl {
                                                       ResponseTransformer transformer) {
         return new ResponseTransformerRouteImpl(path, acceptType, route) {
             @Override
-            public Object render(Object model) throws Exception {
-                return transformer.render(model);
-            }
+            public Object render(Object model) throws Exception { return transformer.render(model); }
+
 
             @Override
             public Object handle(Request request, Response response) throws Exception {
-                return route.handle(request, response);
-            }
         };
-    }
-
+            }
+    protected ResponseTransformerRouteImpl(String path, String acceptType, Route route) {
+        super(path, acceptType, route);
     protected ResponseTransformerRouteImpl(String path, String acceptType, Route route) {
         super(path, acceptType, route);
     }
@@ -59,6 +57,6 @@ public abstract class ResponseTransformerRouteImpl extends RouteImpl {
      * @param model object used to render output.
      * @return message that it is sent to client.
      */
-    public abstract Object render(Object model) throws Exception;
+     public abstract Object render(Object model) throws Exception;
 
 }

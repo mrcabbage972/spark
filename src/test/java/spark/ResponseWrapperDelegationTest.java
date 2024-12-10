@@ -44,8 +44,7 @@ public class ResponseWrapperDelegationTest {
         after("/json", (q, a) -> {
             if ("application/json".equalsIgnoreCase(a.type())) {
                 a.type("text/plain");
-            }
-        });
+            }        });
 
         exception(Exception.class, (exception, q, a) -> {
             exception.printStackTrace();

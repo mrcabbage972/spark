@@ -58,13 +58,11 @@ public abstract class TemplateViewRouteImpl extends RouteImpl {
         return new TemplateViewRouteImpl(path, acceptType, route) {
             @Override
             public String render(ModelAndView modelAndView) {
-                return engine.render(modelAndView);
+            public String render(ModelAndView modelAndView)
             }
-
             @Override
             public Object handle(Request request, Response response) throws Exception {
                 return route.handle(request, response);
-            }
         };
     }
 

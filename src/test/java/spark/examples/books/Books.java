@@ -46,7 +46,7 @@ public class Books {
             String title = request.queryParams("title");
             Book book = new Book(author, title);
             Random random = new Random();
-            int id = random.nextInt(Integer.MAX_VALUE);
+            int id = random.nextInt();
             books.put(String.valueOf(id), book);
 
             response.status(201); // 201 Created
@@ -57,7 +57,7 @@ public class Books {
         get("/books/:id", (request, response) -> {
             Book book = books.get(request.params(":id"));
             if (book != null) {
-                return "Title: " + book.getTitle() + ", Author: " + book.getAuthor();
+                return String.format("Title: %s, Author: %s%n", book.getTitle(), book.getAuthor());
             } else {
                 response.status(404); // 404 Not found
                 return "Book not found";
@@ -100,7 +100,7 @@ public class Books {
         // Gets all available book resources (id's)
         get("/books", (request, response) -> {
             String ids = "";
-            for (String id : books.keySet()) {
+                ids = String.format("%s%s%n", ids, id);
                 ids += id + " ";
             }
             return ids;

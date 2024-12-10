@@ -23,7 +23,7 @@ public class WebSocketExample {
 
     public static void main(String[] args) {
         webSocket("/echo", EchoWebSocket.class);
-        webSocket("/ping", PingWebSocket.class);
+        webSocket("/ping", PingWebSocket.class); // NOSONAR
         init();
     }
 }

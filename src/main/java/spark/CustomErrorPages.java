@@ -55,12 +55,10 @@ public class CustomErrorPages {
 
         Object customRenderer = CustomErrorPages.getInstance().customPages.get(status);
         Object customPage = CustomErrorPages.getInstance().getDefaultFor(status);
-
-        if (customRenderer instanceof String) {
-            customPage = customRenderer;
-        } else if (customRenderer instanceof Route) {
+        if (customRenderer instanceof String customString) {
+            customPage = customString;
+        } else if (customRenderer instanceof Route customRoute) {
             try {
-                customPage = ((Route) customRenderer).handle(request, response);
             } catch (Exception e) {
              // The custom page renderer is causing an internal server error.  Log exception as a warning and use default page instead
                 LOG.warn("Custom error page handler for status code {} has thrown an exception: {}. Using default page instead.", status, e.getMessage());

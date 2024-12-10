@@ -40,7 +40,7 @@ public class EchoWebSocket {
 
     @OnWebSocketMessage
     public void message(String message) throws IOException {
-        System.out.println("Got: " + message);
+        System.out.println(String.format("Got: %s", message));
         session.getRemote().sendString(message);
     }
 }

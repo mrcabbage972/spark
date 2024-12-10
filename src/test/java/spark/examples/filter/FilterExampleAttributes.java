@@ -51,6 +51,6 @@ public class FilterExampleAttributes {
 
     private static String asXml(String name, String value) {
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><" + name + ">" + value + "</" + name + ">";
-    }
+        return String.format("<?xml version=\"1.0\" encoding=\"UTF-8\"?>< %s >%s</ %s >", name, value, name);
 
 }

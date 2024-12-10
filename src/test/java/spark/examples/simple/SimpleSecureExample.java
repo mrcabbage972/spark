@@ -58,7 +58,7 @@ public class SimpleSecureExample {
         });
 
         get("/protected", (request, response) -> {
-            halt(403, "I don't think so!!!");
+            halt(403, "I don\'t think so!!!");
             return null;
         });
 
@@ -69,4 +69,4 @@ public class SimpleSecureExample {
 
         get("/", (request, response) -> "root");
     }
-}
+
