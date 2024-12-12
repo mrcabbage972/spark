@@ -126,7 +126,6 @@ public class CookiesIntegrationTest {
         try {
             HttpResponse response = httpClient.execute(request);
             assertEquals(200, response.getStatusLine().getStatusCode());
-        } catch (Exception ex) {
             fail(ex.toString());
         } finally {
             request.releaseConnection();

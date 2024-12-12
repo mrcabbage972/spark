@@ -46,10 +46,6 @@ public class GzipUtils {
     }
 
     /**
-     * Checks if the HTTP request/response accepts and wants GZIP and i that case wraps the response output stream in a
-     * {@link java.util.zip.GZIPOutputStream}.
-     *
-     * @param httpRequest        the HTTP servlet request.
      * @param httpResponse       the HTTP servlet response.
      * @param requireWantsHeader if wants header is required
      * @return if accepted and wanted a {@link java.util.zip.GZIPOutputStream} otherwise the unchanged response

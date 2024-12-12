@@ -16,7 +16,7 @@ public class InitExceptionHandlerTest {
     @BeforeClass
     public static void setUpClass() throws Exception {
         service = ignite();
-        service.port(NON_VALID_PORT);
+        service.port(NON_VALID_PORT);\n
         service.initExceptionHandler((e) -> errorMessage = "Custom init error");
         service.init();
         service.awaitInitialization();

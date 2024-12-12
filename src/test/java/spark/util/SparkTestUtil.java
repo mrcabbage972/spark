@@ -42,6 +42,7 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
 public class SparkTestUtil {
+    private static final String HTTP_PREFIX = "http://";
 
     private int port;
 
@@ -139,7 +140,7 @@ public class SparkTestUtil {
     private HttpUriRequest getHttpRequest(String requestMethod, String path, String body, boolean secureConnection,
                                           String acceptType, Map<String, String> reqHeaders) {
         try {
-            String protocol = secureConnection ? "https" : "http";
+            String protocol = secureConnection ? "https" : HTTP_PREFIX;
             String uri = protocol + "://localhost:" + port + path;
 
             if (requestMethod.equals("GET")) {

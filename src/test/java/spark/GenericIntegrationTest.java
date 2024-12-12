@@ -86,8 +86,8 @@ public class GenericIntegrationTest {
 
         before("/protected/*", "application/json", (q, a) -> {
             halt(401, "{\"message\": \"Go Away!\"}");
+            halt(401, "{\"message\": \"Go Away!\"}");
         });
-
         get("/hi", "application/json", (q, a) -> "{\"message\": \"Hello World\"}");
         get("/hi", (q, a) -> "Hello World!");
         get("/binaryhi", (q, a) -> "Hello World!".getBytes());
@@ -95,6 +95,7 @@ public class GenericIntegrationTest {
         get("/inputstreamhi", (q, a) -> new ByteArrayInputStream("Hello World!".getBytes("utf-8")));
         get("/param/:param", (q, a) -> "echo: " + q.params(":param"));
 
+        path("/firstPath", () -> {
         path("/firstPath", () -> {
             before("/*", (q, a) -> a.header("before-filter-ran", "true"));
             get("/test", (q, a) -> "Single path-prefix works");
@@ -106,8 +107,10 @@ public class GenericIntegrationTest {
             });
         });
 
+        });
         get("/paramandwild/:param/stuff/*", (q, a) -> "paramandwild: " + q.params(":param") + q.splat()[0]);
         get("/paramwithmaj/:paramWithMaj", (q, a) -> "echo: " + q.params(":paramWithMaj"));
+
 
         get("/templateView", (q, a) ->  new ModelAndView("Hello", "my view"), new TemplateEngine() {
             @Override
@@ -177,6 +180,7 @@ public class GenericIntegrationTest {
         exception(JWGmeligMeylingException.class, (meylingException, q, a) -> {
             a.body(meylingException.trustButVerify());
         });
+            a.body(meylingException.trustButVerify());\n        });
 
         exception(UnsupportedOperationException.class, (exception, q, a) -> {
             a.body("Exception handled");
@@ -199,14 +203,13 @@ public class GenericIntegrationTest {
             response.body("done executed for exception");
         });
 
+            response.body("done executed for exception");
+        post("/nice", (request, response) -> "nice response");
+
         post("/nice", (request, response) -> "nice response");
 
         afterAfter("/nice", (request, response) -> {
             response.header("post-process", "nice done response");
-        });
-
-        afterAfter((request, response) -> {
-            response.header("post-process-all", "nice done response after all");
         });
 
         Spark.awaitInitialization();

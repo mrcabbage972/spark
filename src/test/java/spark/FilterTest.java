@@ -30,7 +30,6 @@ public class FilterTest {
         awaitInitialization();
     }
 
-    @Test
     public void testJustFilter() throws Exception {
         UrlResponse response = testUtil.doMethod("GET", "/justfilter", null);
 

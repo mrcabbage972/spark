@@ -13,6 +13,7 @@ public class ExceptionMapperTest {
         //given
         ExceptionMapper exceptionMapper = null;
         Whitebox.setInternalState(ExceptionMapper.class, "servletInstance", exceptionMapper);
+        assertEquals("Should be equals because ExceptionMapper is a singleton", Whitebox.getInternalState(ExceptionMapper.class, "servletInstance"), exceptionMapper);
 
         //then
         exceptionMapper = ExceptionMapper.getServletInstance();
@@ -25,7 +26,6 @@ public class ExceptionMapperTest {
         ExceptionMapper.getServletInstance(); //initialize Singleton
 
         //then
-        ExceptionMapper exceptionMapper = ExceptionMapper.getServletInstance();
         assertEquals("Should be equals because ExceptionMapper is a singleton", Whitebox.getInternalState(ExceptionMapper.class, "servletInstance"), exceptionMapper);
-    }
+        assertEquals("Should be equals because ExceptionMapper is a singleton", Whitebox.getInternalState(ExceptionMapper.class, "servletInstance"), exceptionMapper);
 }

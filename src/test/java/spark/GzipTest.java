@@ -33,12 +33,13 @@ import static spark.Spark.stop;
  * Tests the GZIP compression support in Spark.
  */
 public class GzipTest {
-
     @BeforeClass
     public static void setup() {
         GzipExample.addStaticFileLocation();
         GzipExample.addRoutes();
         awaitInitialization();
+    }
+    @AfterClass
     }
 
     @AfterClass
@@ -52,6 +53,7 @@ public class GzipTest {
         assertEquals(GzipExample.CONTENT, decompressed);
     }
 
+    }
     @Test
     public void testStaticFileCssStyleCss() throws Exception {
         String decompressed = GzipClient.getAndDecompress("http://localhost:4567/css/style.css");
@@ -65,7 +67,6 @@ public class GzipTest {
     private static void testGet() throws Exception {
         SparkTestUtil testUtil = new SparkTestUtil(4567);
         SparkTestUtil.UrlResponse response = testUtil.doMethod("GET", "/hello", "");
-
         Assert.assertEquals(200, response.status);
         Assert.assertTrue(response.body.contains(GzipExample.FO_SHIZZY));
     }

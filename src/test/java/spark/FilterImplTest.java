@@ -35,18 +35,30 @@ public class FilterImplTest {
         assertEquals("Should return path specified", PATH_TEST, filter.getPath());
         assertEquals("Should return accept type specified", ACCEPT_TYPE_TEST, filter.getAcceptType());
     }
+    public FilterImpl filter;
 
-    @Test
+
+    public void setup(){
     public void testCreate_whenOutAssignAcceptTypeInTheParameters_thenReturnPathAndAcceptTypeSuccessfully(){
-        filter = FilterImpl.create(PATH_TEST, null);
-        assertEquals("Should return path specified", PATH_TEST, filter.getPath());
-        assertEquals("Should return accept type specified", RouteImpl.DEFAULT_ACCEPT_TYPE, filter.getAcceptType());
+        ACCEPT_TYPE_TEST  = "test/*";
     }
 
     @Test
-    public void testCreate_whenAcceptTypeNullValueInTheParameters_thenReturnPathAndAcceptTypeSuccessfully(){
-        filter = FilterImpl.create(PATH_TEST, null, null);
+    public void testConstructor(){
+        FilterImpl filter = new FilterImpl(PATH_TEST, ACCEPT_TYPE_TEST) {
+            @Override
+            public void handle(Request request, Response response) throws Exception {
+            }
+
         assertEquals("Should return path specified", PATH_TEST, filter.getPath());
-        assertEquals("Should return accept type specified", RouteImpl.DEFAULT_ACCEPT_TYPE, filter.getAcceptType());
+        assertEquals("Should return accept type specified", ACCEPT_TYPE_TEST, filter.getAcceptType());
+    }
+    @Test
+    public void testGets_thenReturnGetPathAndGetAcceptTypeSuccessfully() throws Exception {
+        filter = FilterImpl.create(PATH_TEST, ACCEPT_TYPE_TEST, null);
+        assertEquals("Should return path specified", PATH_TEST, filter.getPath());
+        assertEquals("Should return accept type specified", ACCEPT_TYPE_TEST, filter.getAcceptType());
+    }
+}
     }
 }

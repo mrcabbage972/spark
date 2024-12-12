@@ -105,15 +105,17 @@ public class MultipleServicesTest {
             Assert.assertEquals(routeMatch.getHttpMethod(), HttpMethod.get);
             Assert.assertEquals(routeMatch.getMatchUri(), "/hello");
             Assert.assertEquals(routeMatch.getRequestURI(), "ALL_ROUTES");
-            Assert.assertThat(routeMatch.getTarget(), instanceOf(RouteImpl.class));
-        }
-
-        for(RouteMatch routeMatch : second.routes()){
             Assert.assertEquals(routeMatch.getAcceptType(), "*/*");
+            Assert.assertEquals(routeMatch.getHttpMethod(), HttpMethod.get);
+            Assert.assertEquals(routeMatch.getMatchUri(), "/hello");
+
+            Assert.assertThat(routeMatch.getTarget(), instanceOf(RouteImpl.class));
+        }\n\n        for(RouteMatch routeMatch : second.routes()){\n            Assert.assertEquals(routeMatch.getAcceptType(), "*/*");
             Assert.assertThat(routeMatch.getHttpMethod(), instanceOf(HttpMethod.class));
-            boolean isUriOnList = ("/hello/hi/uniqueforsecond").contains(routeMatch.getMatchUri());
+            Assert.assertThat(routeMatch.getHttpMethod(), instanceOf(HttpMethod.class));
             Assert.assertTrue(isUriOnList);
             Assert.assertEquals(routeMatch.getRequestURI(), "ALL_ROUTES");
+            Assert.assertThat(routeMatch.getTarget(), instanceOf(RouteImpl.class));
             Assert.assertThat(routeMatch.getTarget(), instanceOf(RouteImpl.class));
         }
     }

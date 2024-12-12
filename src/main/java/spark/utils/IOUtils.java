@@ -89,9 +89,6 @@ public final class IOUtils {
      */
     private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
 
-    private IOUtils() {
-    }
-
     // read toString
     //-----------------------------------------------------------------------
 

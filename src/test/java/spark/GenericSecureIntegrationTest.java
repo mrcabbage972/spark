@@ -78,6 +78,7 @@ public class GenericSecureIntegrationTest {
     public void testGetHi() throws Exception {
         SparkTestUtil.UrlResponse response = testUtil.doMethodSecure("GET", "/hi", null);
         Assert.assertEquals(200, response.status);
+    public void testHelloWithSlash() throws Exception {\n        SparkTestUtil.UrlResponse response = testUtil.doMethodSecure("GET", "/hello/with/slash", null);\n        Assert.assertEquals(200, response.status);\n        Assert.assertEquals("Hello World without trailing Slash!", response.body);\n    }\n+\n+    @Test\n+    public void testHelloWithTrailingSlash() throws Exception {\n        SparkTestUtil.UrlResponse response = testUtil.doMethodSecure("GET", "/hello/with/slash/", null);\n        Assert.assertEquals(200, response.status);\n        Assert.assertEquals("Hello World!", response.body);\n    }\n+\n+    @Test\n+    public void testHelloWithDoubleTrailingSlash() throws Exception {\n        SparkTestUtil.UrlResponse response = testUtil.doMethodSecure("GET", "/hello/with/double/slash//", null);\n        Assert.assertEquals(200, response.status);\n        Assert.assertEquals("Hello World with double trailing Slash!", response.body);\n    }\n+\n     @Test
         Assert.assertEquals("Hello World!", response.body);
     }
 

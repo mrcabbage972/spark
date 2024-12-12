@@ -110,16 +110,12 @@ public class EmbeddedJettyServer implements EmbeddedServer {
         ServerConnector connector;
 
         if (sslStores == null) {
-            connector = SocketConnectorFactory.createSocketConnector(server, host, port, trustForwardHeaders);
         } else {
             connector = SocketConnectorFactory.createSecureSocketConnector(server, host, port, sslStores, trustForwardHeaders);
         }
 
         Connector previousConnectors[] = server.getConnectors();
-        server = connector.getServer();
-        if (previousConnectors.length != 0) {
             server.setConnectors(previousConnectors);
-            hasCustomizedConnectors = true;
         } else {
             server.setConnectors(new Connector[] {connector});
         }

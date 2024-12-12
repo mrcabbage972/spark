@@ -31,13 +31,13 @@ public class BodyAvailabilityTest {
     public static void tearDown() {
         Spark.stop();
 
-        beforeBody = null;
-        routeBody = null;
-        afterBody = null;
+        afterBody = null;\n    }\n\n\n    @BeforeClass\n    public static void setup() {\n        LOGGER.debug(\"setup()\");
     }
 
     @BeforeClass
-    public static void setup() {
+        before("/hello", (req, res) -> {\n            LOGGER.debug(\"before-req.body() = \" + req.body());\n            beforeBody = req.body();\n        });
+
+        beforeBody = null;
         LOGGER.debug("setup()");
 
         testUtil = new SparkTestUtil(4567);
@@ -74,6 +74,5 @@ public class BodyAvailabilityTest {
 
         Assert.assertEquals(BODY_CONTENT, beforeBody);
         Assert.assertEquals(BODY_CONTENT, routeBody);
-        Assert.assertEquals(BODY_CONTENT, afterBody);
-    }
-}
+        Assert.assertEquals(BODY_CONTENT, afterBody);\n    }\n}\n')
+--- END OF FILE: src/test/java/spark/BodyAvailabilityTest.java ---

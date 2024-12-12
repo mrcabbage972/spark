@@ -169,8 +169,7 @@ public class MatcherFilter implements Filter {
                 httpResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
                 if (CustomErrorPages.existsFor(404)) {
-                    requestWrapper.setDelegate(RequestResponseFactory.create(httpRequest));
-                    responseWrapper.setDelegate(RequestResponseFactory.create(httpResponse));
+                    requestWrapper.setDelegate(RequestResponseFactory.create(httpRequest)); responseWrapper.setDelegate(RequestResponseFactory.create(httpResponse));
                     body.set(CustomErrorPages.getFor(404, requestWrapper, responseWrapper));
                 } else {
                     body.set(String.format(CustomErrorPages.NOT_FOUND));
