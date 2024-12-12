@@ -167,8 +167,6 @@ public abstract class Utf8Appendable {
 
     protected void checkState() {
         if (!isUtf8SequenceComplete()) {
-            _codep = 0;
-            _state = UTF8_ACCEPT;
             try {
                 _appendable.append(REPLACEMENT);
             } catch (IOException e) {
@@ -177,5 +175,3 @@ public abstract class Utf8Appendable {
             throw new org.eclipse.jetty.util.Utf8Appendable.NotUtf8Exception("incomplete UTF8 sequence");
         }
     }
-
-}

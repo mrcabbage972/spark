@@ -74,6 +74,7 @@ public class TypeUtil {
         name2Class.put("Short", java.lang.Short.class);
 
         name2Class.put(null, java.lang.Void.TYPE);
+        name2Class.put("java.lang.String", java.lang.String.class);
         name2Class.put("string", java.lang.String.class);
         name2Class.put("String", java.lang.String.class);
         name2Class.put("java.lang.String", java.lang.String.class);

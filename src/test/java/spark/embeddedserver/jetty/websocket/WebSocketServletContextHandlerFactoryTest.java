@@ -24,7 +24,6 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
-public class WebSocketServletContextHandlerFactoryTest {
 
     final String webSocketPath = "/websocket";
     private ServletContextHandler servletContextHandler;

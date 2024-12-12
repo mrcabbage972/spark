@@ -55,10 +55,8 @@ public class CustomErrorPages {
 
         Object customRenderer = CustomErrorPages.getInstance().customPages.get(status);
         Object customPage = CustomErrorPages.getInstance().getDefaultFor(status);
-
-        if (customRenderer instanceof String) {
-            customPage = customRenderer;
-        } else if (customRenderer instanceof Route) {
+        if (customRenderer instanceof String customPageStr) {
+        } else if (customRenderer instanceof Route route) {
             try {
                 customPage = ((Route) customRenderer).handle(request, response);
             } catch (Exception e) {

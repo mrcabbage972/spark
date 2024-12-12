@@ -304,7 +304,9 @@ public class Request {
      * Example: query parameter 'me' from the URI: /hello?id=fool.
      */
     public String queryParamsSafe(final String queryParam) {
-        return Base64.encode(servletRequest.getParameter(queryParam));
+        String s = servletRequest.getParameter(queryParam);
+        if (s == null) return null;
+        return Base64.encode(s);
     }
 
     /**
