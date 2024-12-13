@@ -20,7 +20,7 @@
     </repositories>
     <version>2.9.4-SNAPSHOT</version>
     <name>Spark</name>
-    <description>A micro framework for creating web applications in Kotlin and Java 8 with minimal effort</description>
+    <description>A micro framework for creating web applications in Kotlin and Java with minimal effort</description>
     <url>http://www.sparkjava.com</url>
     <licenses>
         <license>
