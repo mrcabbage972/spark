@@ -56,6 +56,10 @@ final class Body {
         this.content = content;
     }
 
+    @Override
+    public void close() throws IOException {
+        //No-op
+    }
     public void serializeTo(HttpServletResponse httpResponse,
                             SerializerChain serializerChain,
                             HttpServletRequest httpRequest) throws IOException {

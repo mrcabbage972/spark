@@ -136,3 +136,9 @@ public class Session {
         session.removeAttribute(name);
     }
 }
+
+
+    @Override
+    public void close() throws IOException {
+        //No-op
+    }

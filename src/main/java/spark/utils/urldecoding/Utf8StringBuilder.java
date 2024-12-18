@@ -53,6 +53,11 @@ public class Utf8StringBuilder extends Utf8Appendable
     }
 
     @Override
+    public void close() throws IOException {
+        //No-op
+    }
+
+    @Override
     public String toString()
     {
         checkState();

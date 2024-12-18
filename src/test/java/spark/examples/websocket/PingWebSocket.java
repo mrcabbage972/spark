@@ -38,6 +38,11 @@ public class PingWebSocket {
         this.session = null;
     }
 
+    @Override
+    public void close() {
+        this.session = null;
+    }
+
     @OnWebSocketMessage
     public void message(String message) throws IOException {
         System.out.println("Got: " + message);

@@ -113,7 +113,7 @@ public class MimeType {
 
     protected static String getMimeType(String filename) {
         String fileExtension = filename.replaceAll("^.*\\.(.*)$", "$1");
-        return mappings.getOrDefault(fileExtension, "application/octet-stream");
+        return mappings.getOrDefault(fileExtension, String.format("%s", "application/octet-stream"));
     }
 
     protected static String fromPathInfo(String pathInfo) {

@@ -165,12 +165,16 @@ public abstract class ClassUtils {
         Assert.notNull(name, "Name must not be null");
 
         Class<?> clazz = resolvePrimitiveClassName(name);
-        if (clazz == null) {
-            clazz = commonClassCache.get(name);
-        }
         if (clazz != null) {
             return clazz;
         }
+
+        clazz = commonClassCache.get(name);
+        if (clazz != null) {
+            return clazz;
+        }
+
+
 
         // "java.lang.String[]" style arrays
         if (name.endsWith(ARRAY_SUFFIX)) {

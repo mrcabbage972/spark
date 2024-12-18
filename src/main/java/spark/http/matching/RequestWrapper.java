@@ -144,10 +144,17 @@ final class RequestWrapper extends Request {
         return delegate.queryParams(queryParam);
     }
     
+<<<<<<< HEAD
+    @Override
+    public void close() throws IOException {
+        delegate.close();
+    }
+    public String queryParamsSafe(String queryParam) { return delegate.queryParams(queryParam); }
+=======
     @Override
     public String queryParamsSafe(String queryParam) { return delegate.queryParams(queryParam); }
 
-
+>>>>>>> 84f01868731fa00b768e20149f42f00d3f7c3ea4
     @Override
     public String[] queryParamsValues(String queryParam) {
         return delegate.queryParamsValues(queryParam);

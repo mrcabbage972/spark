@@ -51,3 +51,13 @@ public final class SparkUtils {
     }
 
 }
+@@ -53,4 +59,10 @@
+    }
+
+}
+ +    @Override
+ +    public void close() throws IOException {
+ +        //No-op
+ +    }
+ +
+ }

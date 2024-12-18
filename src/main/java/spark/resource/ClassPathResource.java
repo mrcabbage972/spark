@@ -172,6 +172,12 @@ public class ClassPathResource extends AbstractFileResolvingResource {
         return is;
     }
 
+    @Override
+    public void close() throws IOException {
+        try (InputStream is = this.getInputStream()) {
+        }
+    }
+
     /**
      * This implementation returns a URL for the underlying class path resource.
      *

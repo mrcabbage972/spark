@@ -29,7 +29,7 @@ public class WebSocketTestClient {
 
     @OnWebSocketConnect
     public void onConnect(Session session) throws IOException{
-	session.getRemote().sendString("Hi Spark!");
+        session.getRemote().sendString("Hi Spark!");
 	session.close(StatusCode.NORMAL, "Bye!");
     }
 }

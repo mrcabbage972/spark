@@ -398,7 +398,7 @@ public abstract class StringUtils {
             trimmed = trimmed.substring(0, trimmed.length() - 1);
         }
 
-        if (trimmed.startsWith("/")) {
+        if (trimmed.startsWith("/") || trimmed.startsWith("\\")) {
             trimmed = trimmed.substring(1);
         }
 

@@ -61,6 +61,12 @@ public class ExternalResource extends AbstractFileResolvingResource {
     public String getDescription() {
         return "external resource [" + file.getAbsolutePath() + "]";
     }
+    @Override
+    public void close() throws IOException {
+        try (FileInputStream fis = new FileInputStream(file)) {
+        }
+    }
+    @Override
 
     @Override
     public InputStream getInputStream() throws IOException {

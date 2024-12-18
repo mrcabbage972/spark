@@ -351,3 +351,10 @@ public abstract class ResourceUtils {
     }
 
 }
+@@ -353,3 +359,9 @@
+    @Override
+    public void close() throws IOException {
+        //No-op
+    }
+
+ }

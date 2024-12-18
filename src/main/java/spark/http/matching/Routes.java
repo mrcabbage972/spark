@@ -37,6 +37,7 @@ final class Routes {
         if (match != null) {
             target = match.getTarget();
         } else if (context.httpMethod() == HttpMethod.head && context.body().notSet()) {
+@@ -85,4 +91,10 @@
             // See if get is mapped to provide default head mapping
             content =
                     context.routeMatcher().find(HttpMethod.get, context.uri(), context.acceptType())

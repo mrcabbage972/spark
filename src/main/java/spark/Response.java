@@ -93,6 +93,11 @@ public class Response {
     public void body(String body) {
         this.body = body;
     }
+     }
+     @Override
+     public void close() throws IOException {
+         try (OutputStream os = response.getOutputStream()) {
+         }
 
     /**
      * returns the body

@@ -278,6 +278,7 @@ public class QueryParamsMap {
 
 
     private static class NullQueryParamsMap extends QueryParamsMap {
+        @Override
         public NullQueryParamsMap() {
             super();
         }

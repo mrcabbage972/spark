@@ -68,7 +68,7 @@ public class BodyAvailabilityTest {
     @Test
     public void testPost() throws Exception {
         SparkTestUtil.UrlResponse response = testUtil.doMethod("POST", "/hello", BODY_CONTENT);
-        LOGGER.info(response.body);
+    */
         Assert.assertEquals(HTTP_OK, response.status);
         Assert.assertTrue(response.body.contains(BODY_CONTENT));
 

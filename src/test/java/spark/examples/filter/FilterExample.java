@@ -50,17 +50,16 @@ public class FilterExample {
 
         usernamePasswords.put("foo", "bar");
         usernamePasswords.put("admin", "admin");
-
+        before((request, response) -> {
+            response.header("Foo", "Set by first before filter");
+        });
         before(new Filter() {
             @Override
             public void handle(Request request, Response response) {
                 String user = request.queryParams("user");
                 String password = request.queryParams("password");
-
                 String dbPassword = usernamePasswords.get(user);
-                if (!(password != null && password.equals(dbPassword))) {
-                    halt(401, "You are not welcome here!!!");
-                }
+                if (!(password != null && password.equals(dbPassword))) { halt(401, "You are not welcome here!!!"); }
             }
         });
 

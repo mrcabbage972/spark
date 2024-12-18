@@ -37,6 +37,10 @@ public class Books {
      */
     public static Map<String, Book> books = new HashMap<>();
 
+    public static void stop() {
+        books.clear();
+    }
+
     public static void main(String[] args) {
 
         // Creates a new book resource, will return the ID to the created resource

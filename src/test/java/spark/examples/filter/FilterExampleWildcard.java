@@ -27,6 +27,11 @@ public class FilterExampleWildcard {
             // ... check if authenticated
             halt(401, "Go Away!");
         });
+
+        before("/protected/*", (request, response) -> {
+            // ... check if authenticated
+            halt(401, "Go Away!");
+        });
     }
 
 }

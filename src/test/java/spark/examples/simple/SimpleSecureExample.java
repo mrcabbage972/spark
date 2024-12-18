@@ -40,8 +40,6 @@ public class SimpleSecureExample {
                 SparkTestUtil.getKeyStoreLocation(),
                 SparkTestUtil.getKeystorePassword(), null, null);
 
-        get("/hello", (request, response) -> "Hello Secure World!");
-
         post("/hello", (request, response) -> "Hello Secure World: " + request.body());
 
         get("/private", (request, response) -> {

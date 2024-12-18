@@ -148,6 +148,11 @@ public abstract class Utf8Appendable {
                     throw new org.eclipse.jetty.util.Utf8Appendable.NotUtf8Exception(reason);
 
                 default:
+    @Override
+    public void close() throws IOException {
+        //No-op
+    }
+
                     _state = next;
 
             }

@@ -89,6 +89,10 @@ public class HttpRequestWrapper extends HttpServletRequestWrapper {
         public int available() {
             return byteArrayInputStream.available();
         }
+        @Override
+        public void close() throws IOException {
+            return byteArrayInputStream.available();
+        }
 
         @Override
         public boolean isFinished() {

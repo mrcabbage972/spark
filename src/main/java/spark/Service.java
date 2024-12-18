@@ -533,6 +533,7 @@ public final class Service extends Routable {
         }
     }
 
+    @Override
     private void initiateStop() {
     	stopLatch = new CountDownLatch(1);
         Thread stopThread = new Thread(() -> {

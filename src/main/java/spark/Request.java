@@ -284,6 +284,13 @@ public class Request {
     }
 
     /**
+     * @return the length of request.body
+     */
+    public int contentLength() {
+        return servletRequest.getContentLength();
+    }
+
+    /**
      * Gets the query param
      *
      * @param queryParam the query parameter

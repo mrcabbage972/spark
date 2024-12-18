@@ -24,7 +24,6 @@ public class MimeParse {
         String type;
 
         String subType;
-
         // !a dictionary of all the parameters for the media range
         Map<String, String> params;
 
@@ -132,14 +131,13 @@ public class MimeParse {
      * the best match, or (-1, 0) if no match was found. Just as for
      * quality_parsed(), 'parsed_ranges' must be a list of parsed media ranges.
      *
-     * @param mimeType
+     * @param  mimeType the mime type
      * @param parsedRanges
      */
     private static FitnessAndQuality fitnessAndQualityParsed(String mimeType, Collection<ParseResults> parsedRanges) {
         int bestFitness = -1;
         float bestFitQ = 0;
         ParseResults target = parseMediaRange(mimeType);
-
         for (ParseResults range : parsedRanges) {
             if ((target.type.equals(range.type) || range.type.equals("*") || target.type.equals("*"))
                     && (target.subType.equals(range.subType) || range.subType.equals("*")

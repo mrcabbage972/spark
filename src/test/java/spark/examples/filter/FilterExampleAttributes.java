@@ -40,12 +40,6 @@ public class FilterExampleAttributes {
         after("/hi", (request, response) -> {
             for (String attr : request.attributes()) {
                 LOGGER.info("attr: " + attr);
-            }
-        });
-
-        after("/hi", (request, response) -> {
-            String foo = request.attribute("foo");
-            response.body(asXml("foo", foo));
         });
     }
 

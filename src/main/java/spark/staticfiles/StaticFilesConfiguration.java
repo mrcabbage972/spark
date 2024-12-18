@@ -76,8 +76,9 @@ public class StaticFilesConfiguration {
             httpResponse.getWriter().write("Bad request");
             httpResponse.getWriter().flush();
             LOG.warn(directoryTraversalDetection.getMessage() + " directory traversal detection for path: "
-                             + httpRequest.getPathInfo());
+ httpRequest.getPathInfo());
         }
+        return false;
         return false;
     }
 
@@ -145,7 +146,6 @@ public class StaticFilesConfiguration {
             if (staticResourceHandlers == null) {
                 staticResourceHandlers = new ArrayList<>();
             }
-
             staticResourceHandlers.add(new ClassPathResourceHandler(folder, "index.html"));
             LOG.info("StaticResourceHandler configured with folder = " + folder);
             staticResourcesSet = true;

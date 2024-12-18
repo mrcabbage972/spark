@@ -99,9 +99,10 @@ public class CookiesIntegrationTest {
     }
 
     @Test
+    public void testEmptyCookies() {\n
     public void testRemoveCookie() {
         String cookieName = "testCookie";
-        String cookieValue = "testCookieValue";
+    }\n\n    @Test\n    public void testRemoveCookie() {\n
         httpPost("/setCookie?cookieName=" + cookieName + "&cookieValue=" + cookieValue);
         httpPost("/removeCookie?cookieName=" + cookieName + "&cookieValue=" + cookieValue);
         httpPost("/assertNoCookies");
