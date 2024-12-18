@@ -49,9 +49,9 @@ public class Response {
     }
 
 
-    /**
-     * Sets the status code for the
      *
+     * Sets the status code for the
+    public void closeConnection() { }
      * @param statusCode the status code
      */
     public void status(int statusCode) {
