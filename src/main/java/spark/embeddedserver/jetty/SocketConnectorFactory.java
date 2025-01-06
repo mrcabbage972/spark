@@ -88,10 +88,8 @@ public class SocketConnectorFactory {
         if (sslStores.trustStorePassword() != null) {
             sslContextFactory.setTrustStorePassword(sslStores.trustStorePassword());
         }
-
-        if (sslStores.needsClientCert()) {
-            sslContextFactory.setNeedClientAuth(true);
-            sslContextFactory.setWantClientAuth(true);
+        sslContextFactory.setNeedClientAuth(true);
+        sslContextFactory.setWantClientAuth(true);
         }
 
         HttpConnectionFactory httpConnectionFactory = createHttpConnectionFactory(trustForwardHeaders);

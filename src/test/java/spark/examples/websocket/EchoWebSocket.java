@@ -32,7 +32,6 @@ public class EchoWebSocket {
     public void connected(Session session) {
         this.session = session;
     }
-
     @OnWebSocketClose
     public void closed(int statusCode, String reason) {
         this.session = null;

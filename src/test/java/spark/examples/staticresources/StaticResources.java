@@ -30,7 +30,7 @@ public class StaticResources {
         staticFiles.location("/public");
 
         get("/hello", (request, response) -> {
-            return "Hello World!";
+            return "Hello World!\n";
         });
     }
 }

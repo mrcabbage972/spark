@@ -23,10 +23,10 @@ package spark.examples.books;
  */
 public class Book {
     
-    private String author;
-    private String title;
+    private final String author;
+    private final String title;
     
-    public Book(String author, String title) {
+    public Book(final String author, final String title) {
         this.author = author;
         this.title = title;
     }
@@ -45,20 +45,3 @@ public class Book {
     public String getTitle() {
         return title;
     }
-    
-    /**
-     * @param author the author to set
-     */
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-}

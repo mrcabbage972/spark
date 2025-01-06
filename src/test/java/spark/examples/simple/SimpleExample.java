@@ -31,8 +31,8 @@ public class SimpleExample {
 
         get("/hello", (request, response) -> "Hello World!");
 
-        post("/hello", (request, response) -> "Hello World: " + request.body());
 
+        post("/hello", (request, response) -> "Hello World: " + request.body());
         get("/private", (request, response) -> {
             response.status(401);
             return "Go Away!!!";
@@ -54,7 +54,6 @@ public class SimpleExample {
             response.redirect("/news/world");
             return null;
         });
-
         get("/", (request, response) -> "root");
 
 

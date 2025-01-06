@@ -10,7 +10,7 @@ public class SessionExample {
         get("/", (request, response) -> {
             String name = request.session().attribute(SESSION_NAME);
             if (name == null) {
-                return "<html><body>What's your name?: <form action=\"/entry\" method=\"POST\"><input type=\"text\" name=\"name\"/><input type=\"submit\" value=\"go\"/></form></body></html>";
+                return "<html><body>What\'s your name?: <form action=\\"/entry\\" method=\\"POST\\"><input type=\\"text\\" name=\\"name\\"/><input type=\\"submit\\" value=\\"go\\"/></form></body></html>";
             } else {
                 return String.format("<html><body>Hello, %s!</body></html>", name);
             }

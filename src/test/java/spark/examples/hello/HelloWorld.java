@@ -24,6 +24,5 @@ public class HelloWorld {
 
         get("/hello", (request, response) -> "Hello World!");
 
-    }
 
 }

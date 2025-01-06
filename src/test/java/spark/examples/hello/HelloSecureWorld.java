@@ -10,7 +10,7 @@ public class HelloSecureWorld {
     public static void main(String[] args) {
 
         secure(args[0], args[1], null, null);
-        get("/hello", (request, response) -> {
+       get("/hello", (request, response) -> {
             return "Hello Secure World!";
         });
 

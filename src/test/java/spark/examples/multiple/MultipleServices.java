@@ -34,13 +34,15 @@ public class MultipleServices {
     private static void igniteFirstService() {
         Service http = ignite(); // I give the variable the name 'http' for the code to make sense when adding routes.
         http.get("/hello", (q, a) -> "Hello World!");
+        http.get("/hi", (q, a) -> "Hello World!");
     }
 
     private static void igniteSecondService() {
         Service http = ignite()
                 .port(1234)
                 .staticFileLocation("/public")
-                .threadPool(40);
+                .threadPool(40)
+                .redirect.any("/hi", "/hello");
 
         http.get("/hello", (q, a) -> "Hello World!");
 

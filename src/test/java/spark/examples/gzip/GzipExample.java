@@ -53,6 +53,5 @@ public class GzipExample {
     }
 
     public static String getAndDecompress() throws Exception {
-        return GzipClient.getAndDecompress("http://localhost:4567" + PATH);
     }
 }

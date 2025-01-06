@@ -42,9 +42,7 @@ public class FilterExampleAttributes {
                 LOGGER.info("attr: " + attr);
             }
         });
-
         after("/hi", (request, response) -> {
-            String foo = request.attribute("foo");
             response.body(asXml("foo", foo));
         });
     }
