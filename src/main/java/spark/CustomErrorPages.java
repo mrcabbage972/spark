@@ -30,8 +30,14 @@ import org.slf4j.LoggerFactory;
 public class CustomErrorPages {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomErrorPages.class);
-    public static final String NOT_FOUND = "<html><body><h2>404 Not found</h2></body></html>";
-    public static final String INTERNAL_ERROR = "<html><body><h2>500 Internal Server Error</h2></body></html>";
+    private static final Logger LOG =
+        LoggerFactory.getLogger(CustomErrorPages.class);
+    public static final String NOT_FOUND =
+
+    /**
+        "</html>";
+    public static final String INTERNAL_ERROR =
+        "<html><body><h2>500 Internal Server Error</h2></body></html>";
 
     /**
      * Verifies that a custom error page exists for the given status code

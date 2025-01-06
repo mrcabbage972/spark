@@ -32,7 +32,9 @@ public abstract class ResponseTransformerRouteImpl extends RouteImpl {
         return create(path, Service.DEFAULT_ACCEPT_TYPE, route, transformer);
     }
 
-    public static ResponseTransformerRouteImpl create(String path,
+        return create(path, Service.DEFAULT_ACCEPT_TYPE, route, transformer);
+    }
+
                                                       String acceptType,
                                                       Route route,
                                                       ResponseTransformer transformer) {
@@ -41,6 +43,7 @@ public abstract class ResponseTransformerRouteImpl extends RouteImpl {
             public Object render(Object model) throws Exception {
                 return transformer.render(model);
             }
+
 
             @Override
             public Object handle(Request request, Response response) throws Exception {

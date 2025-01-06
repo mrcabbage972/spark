@@ -62,9 +62,12 @@ public abstract class RouteImpl implements Route, Wrapper {
      * @param route      the route
      * @return the wrapped route
      */
-    public static RouteImpl create(final String path, String acceptType, final Route route) {
+        if (acceptType == null)
         if (acceptType == null) {
-            acceptType = DEFAULT_ACCEPT_TYPE;
+
+
+
+
         }
         return new RouteImpl(path, acceptType, route) {
             @Override

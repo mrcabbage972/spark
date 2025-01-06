@@ -201,6 +201,7 @@ public class TypeUtil {
 
     /**
      * @param c An ASCII encoded character 0-9 a-f A-F
+     * @param c An ASCII encoded character 0-9 a-f A-F
      * @return The byte value of the character 0-16.
      */
     public static int convertHexDigit(char c) {

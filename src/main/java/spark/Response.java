@@ -134,7 +134,9 @@ public class Response {
      */
     public void redirect(String location, int httpStatusCode) {
         if (LOG.isDebugEnabled()) {
-            LOG.debug("Redirecting ({} to {}", httpStatusCode, location);
+            LOG.debug(
+                "Redirecting ({} to {}", httpStatusCode, location
+            );
         }
         response.setStatus(httpStatusCode);
         response.setHeader("Location", location);
